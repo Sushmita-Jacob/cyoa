@@ -13,8 +13,8 @@ function setup() {
     background("pink");
     text(
         "Welcome to screen 0. This is the home screen.",
-        width/2,
-        height/2-100
+        width / 2,
+        height / 2-100
     );
     // Create buttons for all screens
 }
