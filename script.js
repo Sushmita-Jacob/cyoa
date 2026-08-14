@@ -14,7 +14,7 @@ function setup() {
     // Create buttons for all screens
     enterButton = new Sprite(300, 300, 100, 50, "k");
     enterButton.color = "plum";
-    enterButton.text = "Enter";
+    enterButton.text = "Play";
 
     a1Button = new Sprite(-200, -200, 150, 50, "k");
 
@@ -29,6 +29,7 @@ function setup() {
 function draw() {
     if (screen == 0){
         background("purple");
+        fill("lightgreen");
         text(
             "Welcome to Hade's Haunted House.",
             width / 2,
@@ -107,9 +108,14 @@ function showScreen2() {
         height / 2 - 100
     );
     text(
-        "A witch asks if you want to pay for your freedom. What do you do?",
+        "A witch asks if you want to pay for your freedom.",
         width / 2,
         height / 2 - 50
+    );
+    text(
+        "What do you do?",
+        width / 2,
+        height / 2
     );
     a1Button.pos = {x: - 200, y: -200};
     a2Button.pos = {x: - 50, y: -50};
@@ -124,23 +130,45 @@ function showScreen2() {
 function showScreen3() {
     background("purple");
     text(
-        "",
+        "The witch brings you home and you return safely.",
         width / 2,
         height / 2 - 100
-    )
+    );
+    text(
+        "She also gives you a black cat as a gift!",
+        width / 2,
+        height / 2 - 50
+    );
+    text(
+        "Press play to try again!",
+        width / 2,
+        height / 2
+    );
     b1Button.pos = {x: -100, y: -100};
     b2Button.pos = {x: -50, y: -50};
+    enterButton.pos = {x: 300, y: 300};
 }
 
 function showScreen4() {
-    background("plum");
+    background("purple");
     text(
-        "You hit an end point at screen 4.",
+        "You end up being lost for centuries after your demise.",
         width / 2,
         height / 2 - 100
-    )
+    );
+    text(
+        "But you've become best friends with the skeleton!",
+        width / 2,
+        height / 2 - 50
+    );
+    text(
+        "Press play to try again!",
+        width / 2,
+        height / 2
+    );
     b1Button.pos = {x: -100, y: - 100};
     b2Button.pos = {x: -50, y: -50};
+    enterButton.pos = {x: 300, y: 300};
 }
 
 function showScreen5() {
@@ -149,7 +177,13 @@ function showScreen5() {
         "You return home safely.",
         width / 2,
         height / 2 - 100
-    )
+    );
+    text(
+        "Press play to try again!",
+        width / 2,
+        height / 2 - 50
+    );
     a1Button.pos = {x: -200, y: -200};
     a2Button.pos = {x: -50, y: -50};
+    enterButton.pos = {x: 300, y: 300};
 }
