@@ -26,6 +26,10 @@ function setup() {
     c1Button = new Sprite(-250, -250, 150, 50, "k");
     c2Button = new Sprite(-300, -300, 150, 50, "k");
 
+    replayButton = new Sprite(-350, -350, 100, 50, "k");
+    replayButton.color = "plum";
+    replayButton.text = "Replay";
+
 }
 
 function draw() {
@@ -42,13 +46,18 @@ function draw() {
             width / 2,
             height / 2 - 50
         )
+        replayButton.pos = {x: -350, y: -350};
+        enterButton.pos = {x: 300, y: 300};
     }
 
     if (enterButton.mouse.presses()) {
         print("pressed");
         showScreen1();
         screen = 1;
-        
+    }
+
+    if (replayButton.mouse.presses()) {
+        screen = 0;
     }
 
     if (screen==1){
@@ -64,14 +73,18 @@ function draw() {
     } else if (screen == 2){
         if(b1Button.mouse.presses()){
             showScreen3();
+            screen = 3;
         } else if (b2Button.mouse.presses()){
             showScreen4();
+            screen = 4;
         }
     } else if (screen == 5){
         if (c1Button.mouse.presses()){
             showScreen6();
+            screen = 6;
         } else if (c2Button.mouse.presses()){
             showScreen7();
+            screen = 7;
         }
     }
     // Display enter button
@@ -154,7 +167,7 @@ function showScreen3() {
     );
     b1Button.pos = {x: -100, y: -100};
     b2Button.pos = {x: -50, y: -50};
-    enterButton.pos = {x: 300, y: 300};
+    replayButton.pos = {x: 300, y: 300};
 }
 
 function showScreen4() {
@@ -176,7 +189,7 @@ function showScreen4() {
     );
     b1Button.pos = {x: -100, y: - 100};
     b2Button.pos = {x: -50, y: -50};
-    enterButton.pos = {x: 300, y: 300};
+    replayButton.pos = {x: 300, y: 300};
 }
 
 function showScreen5() {
@@ -220,7 +233,7 @@ function showScreen6() {
     )
     c1Button.pos = {x: -250, y: -250};
     c2Button.pos = {x: -300, y: -300};
-    enterButton.pos = {x: 300, y: 300};
+    replayButton.pos = {x: 300, y: 300};
 }
 
 function showScreen7() {
@@ -242,5 +255,5 @@ function showScreen7() {
     );
     c1Button.pos = {x: -250, y: -250};
     c2Button.pos = {x: -300, y: -300};
-    enterButton.pos = {x: 300, y: 300};
+    replayButton.pos = {x: 300, y: 300};
 }
