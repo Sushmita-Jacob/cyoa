@@ -1,8 +1,11 @@
 let enterButton;
+let replayButton;
 let a1Button;
 let a2Button;
 let b1Button;
 let b2Button;
+let c1Button;
+let c2Button;
 let screen = 0;
 
 function setup() {
@@ -12,17 +15,16 @@ function setup() {
     noStroke();
 
     // Create buttons for all screens
-    enterButton = new Sprite(300, 300, 100, 50, "k");
+    enterButton = new Sprite(width / 2, height * 3/4, 100, 50, "k");
     enterButton.color = "plum";
     enterButton.text = "Play";
 
     a1Button = new Sprite(-200, -200, 150, 50, "k");
-
     a2Button = new Sprite(-50, -50, 150, 50, "k");
-
     b1Button = new Sprite(-100, -100, 150, 50, "k");
-
     b2Button = new Sprite(-150, -150, 150, 50, "k");
+    c1Button = new Sprite(-250, -250, 150, 50, "k");
+    c2Button = new Sprite(-300, -300, 150, 50, "k");
 
 }
 
@@ -65,6 +67,12 @@ function draw() {
         } else if (b2Button.mouse.presses()){
             showScreen4();
         }
+    } else if (screen == 5){
+        if (c1Button.mouse.presses()){
+            showScreen6();
+        } else if (c2Button.mouse.presses()){
+            showScreen7();
+        }
     }
     // Display enter button
 
@@ -80,7 +88,7 @@ function draw() {
 function showScreen1() {
     background("purple")
     text(
-        "You see a skeleton giving you a last chance to turn back.",
+        "S1: You see a skeleton giving you a last chance to turn back.",
         width / 2,
         height / 2 - 100
     );
@@ -103,7 +111,7 @@ function showScreen1() {
 function showScreen2() {
     background("purple");
     text(
-        "You've been wandering for hours and get lost.",
+        "S2: You've been wandering for hours and get lost.",
         width / 2,
         height / 2 - 100
     );
@@ -130,7 +138,7 @@ function showScreen2() {
 function showScreen3() {
     background("purple");
     text(
-        "The witch brings you home and you return safely.",
+        "S3: The witch brings you home and you return safely.",
         width / 2,
         height / 2 - 100
     );
@@ -152,7 +160,7 @@ function showScreen3() {
 function showScreen4() {
     background("purple");
     text(
-        "You end up being lost for centuries after your demise.",
+        "S4: You end up being lost for centuries after your demise.",
         width / 2,
         height / 2 - 100
     );
@@ -174,16 +182,65 @@ function showScreen4() {
 function showScreen5() {
     background("purple");
     text(
-        "You return home safely.",
+        "S5: You got locked in! Will you try to leave yourself?",
         width / 2,
         height / 2 - 100
     );
     text(
-        "Press play to try again!",
+        "Or will you ask the skeleton for help?",
         width / 2,
         height / 2 - 50
     );
     a1Button.pos = {x: -200, y: -200};
     a2Button.pos = {x: -50, y: -50};
+    c1Button.pos = {x: 200, y: 300};
+    c1Button.color = "plum";
+    c1Button.text = "Bang the door";
+    c2Button.pos = {x: 400, y: 300};
+    c2Button.color = "plum";
+    c2Button.text = "Ask for help"
+}
+
+function showScreen6() {
+    background("purple");
+    text(
+        "S6: The door refuses to nudge. You panic.",
+        width / 2,
+        height / 2 - 100
+    );
+    text(
+        "You come to the realization you're trapped...",
+        width / 2,
+        height / 2 - 50
+    )
+    text(
+        "...for eternity.",
+        width / 2,
+        height / 2
+    )
+    c1Button.pos = {x: -250, y: -250};
+    c2Button.pos = {x: -300, y: -300};
+    enterButton.pos = {x: 300, y: 300};
+}
+
+function showScreen7() {
+    background("purple");
+    text(
+        "S7:  The skeleton shrugs with an unamused look",
+        width / 2, 
+        height / 2 - 100
+    );
+    text(
+        "\"That\'s not my problem,\" she murmurs.",
+        width / 2,
+        height / 2 - 50
+    );
+    text(
+        "Your independence led to being trapped forever.",
+        width / 2,
+        height / 2
+    );
+    c1Button.pos = {x: -250, y: -250};
+    c2Button.pos = {x: -300, y: -300};
     enterButton.pos = {x: 300, y: 300};
 }
