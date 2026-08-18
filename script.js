@@ -33,6 +33,7 @@ function setup() {
 }
 
 function draw() {
+    rectMode(CENTER);
     if (screen == 0){
         background("purple");
         fill("lightgreen");
@@ -48,6 +49,7 @@ function draw() {
         )
         replayButton.pos = {x: -350, y: -350};
         enterButton.pos = {x: 300, y: 300};
+        showShapes();
     }
 
     if (enterButton.mouse.presses()) {
@@ -100,8 +102,9 @@ function draw() {
 // Functions to display screens
 function showScreen1() {
     background("purple")
+    fill("lightgreen")
     text(
-        "S1: You see a skeleton giving you a last chance to turn back.",
+        "You see a skeleton giving you a last chance to turn back.",
         width / 2,
         height / 2 - 100
     );
@@ -123,8 +126,9 @@ function showScreen1() {
 
 function showScreen2() {
     background("purple");
+    fill("lightgreen");
     text(
-        "S2: You've been wandering for hours and get lost.",
+        "You've been wandering for hours and get lost.",
         width / 2,
         height / 2 - 100
     );
@@ -150,8 +154,9 @@ function showScreen2() {
 
 function showScreen3() {
     background("purple");
+    fill("lightgreen");
     text(
-        "S3: The witch brings you home and you return safely.",
+        "The witch brings you home and you return safely.",
         width / 2,
         height / 2 - 100
     );
@@ -161,7 +166,7 @@ function showScreen3() {
         height / 2 - 50
     );
     text(
-        "Press play to try again!",
+        "Congrats on making it out! You may not be lucky next time...",
         width / 2,
         height / 2
     );
@@ -172,8 +177,9 @@ function showScreen3() {
 
 function showScreen4() {
     background("purple");
+    fill("lightgreen");
     text(
-        "S4: You end up being lost for centuries after your demise.",
+        "You end up being lost for centuries after your demise.",
         width / 2,
         height / 2 - 100
     );
@@ -183,7 +189,7 @@ function showScreen4() {
         height / 2 - 50
     );
     text(
-        "Press play to try again!",
+        "You may be stuck, but you made a companion!",
         width / 2,
         height / 2
     );
@@ -194,8 +200,9 @@ function showScreen4() {
 
 function showScreen5() {
     background("purple");
+    fill("lightgreen");
     text(
-        "S5: You got locked in! Will you try to leave yourself?",
+        "You got locked in! Will you try to leave yourself?",
         width / 2,
         height / 2 - 100
     );
@@ -216,8 +223,9 @@ function showScreen5() {
 
 function showScreen6() {
     background("purple");
+    fill("lightgreen");
     text(
-        "S6: The door refuses to nudge. You panic.",
+        "The door refuses to budge. You panic.",
         width / 2,
         height / 2 - 100
     );
@@ -238,8 +246,9 @@ function showScreen6() {
 
 function showScreen7() {
     background("purple");
+    fill("lightgreen");
     text(
-        "S7:  The skeleton shrugs with an unamused look",
+        "The skeleton shrugs with an unamused look",
         width / 2, 
         height / 2 - 100
     );
@@ -256,4 +265,19 @@ function showScreen7() {
     c1Button.pos = {x: -250, y: -250};
     c2Button.pos = {x: -300, y: -300};
     replayButton.pos = {x: 300, y: 300};
+}
+
+function showShapes() {
+    // House
+    fill("brown");
+    rect(475, 350, 200, 150);
+    fill("saddlebrown");
+    triangle(375, 275, 575, 275, 475, 200)
+    fill("black");
+    rect(475, 375, 75, 100);
+
+    //Skeleton
+    fill("white");
+    circle(100, 200, 75);
+    rect(100, 100, 10, 25);
 }
